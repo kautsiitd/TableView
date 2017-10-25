@@ -8,18 +8,30 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: TableViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		// Do any additional setup after loading the view, typically from a nib.
 	}
-
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
-		// Dispose of any resources that can be recreated.
 	}
+}
 
-
+extension ViewController {
+	override func numberOfSections(in tableView: TableView) -> Int {
+		return 1
+	}
+	override func numberOfRows(in tableView: TableView, inSection: Int) -> Int {
+		return 10
+	}
+	override func heightForRow(at: IndexPath) -> Int {
+		return 240
+	}
+	override func cellForRow(at: IndexPath) -> TableViewCell {
+		guard let cell = tableView?.reUsableCellWith(identifier: "Cell", at: at) else {
+			return TableViewCell()
+		}
+		return cell
+	}
 }
 
