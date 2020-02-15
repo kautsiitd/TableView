@@ -9,29 +9,26 @@
 import UIKit
 
 class ViewController: TableViewController {
-	override func viewDidLoad() {
-		super.viewDidLoad()
-	}
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 	}
 }
 
 extension ViewController {
-	override func numberOfSections(in tableView: TableView) -> Int {
-		return 1
-	}
-	override func numberOfRows(in tableView: TableView, inSection: Int) -> Int {
-		return 10
-	}
-	override func heightForRow(at: IndexPath) -> Int {
-		return 240
-	}
-	override func cellForRow(at: IndexPath) -> TableViewCell {
-		guard let cell = tableView?.reUsableCellWith(identifier: "Cell", at: at) else {
-			return TableViewCell()
-		}
-		return cell
-	}
+    override func numberOfSections(in tableView: TableView) -> Int {
+        return 1
+    }
+    override func numberOfRows(in tableView: TableView, inSection: Int) -> Int {
+        return 10
+    }
+    override func heightForRow(at: IndexPath) -> Int {
+        return 240
+    }
+    override func cellForRow(at: IndexPath) -> TableViewCell {
+        guard let cell = tableView?.reUsableCellWith(identifier: "Cell", at: at) else {
+            return TableViewCell()
+        }
+        return cell
+    }
 }
 

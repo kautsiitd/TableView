@@ -18,16 +18,13 @@ class TableViewController: UIViewController {
 	var delegate: TableViewDelegate?
 	var dataSource: TableViewDataSource?
 	
-	override func viewDidLoad() {
-		super.viewDidLoad()
-	}
-	override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 	}
 }
 
 extension TableViewController: TableViewDelegate {
-	func numberOfSections(in tableView: TableView) -> Int {
+    func numberOfSections(in tableView: TableView) -> Int {
 		return 1
 	}
 	func numberOfRows(in tableView: TableView, inSection: Int) -> Int {
